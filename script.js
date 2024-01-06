@@ -125,10 +125,62 @@ for (let index = 1; index < arr1.length; index++) {
 let f0=1,f1=0;
 let fn=0;
 while(fn<10){
-    console.log(fn);
+    // console.log(fn);
     fn=f0+f1;
     f1=f0;
     f0=fn;
     
 
+}
+
+// Coding challenge #15: Create a function that will find the nth Fibonacci number using recursion
+
+function findFibonacci(n)
+{
+    if (n == 0)
+        return 0;
+        
+    if (n == 1)
+        return 1;
+        
+    return findFibonacci(n - 1) + findFibonacci(n - 2);
+}
+
+let n = findFibonacci(10);
+// console.log(n);
+
+
+// Coding challenge #16: Create a function that will return a Boolean specifying if a number is prime
+function prime_no(n) {
+    if(n==0||n==1){
+        return "not prime number"
+    }
+    if(n==2){
+        return "prime number"
+    }
+    if(n%2!=0){
+        return "prime number"
+    }else{
+        return "not prime number"
+    }
+}
+// console.log(prime_no(13));
+
+
+// Coding challenge #17: Calculate the sum of digits of a positive integer number
+
+let digit =1235231;
+let digit_to_Str=digit.toString();
+let sum_digit=0;
+for(let char of digit_to_Str){
+    sum_digit=sum_digit+parseInt(char)
+}
+console.log(sum_digit);
+
+// Coding challenge #18: Print the first 100 prime numbers
+let ln=100;
+while(ln<100){
+    if(ln>2){
+        
+    }
 }
