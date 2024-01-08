@@ -175,12 +175,160 @@ let sum_digit=0;
 for(let char of digit_to_Str){
     sum_digit=sum_digit+parseInt(char)
 }
-console.log(sum_digit);
+// console.log(sum_digit);
 
 // Coding challenge #18: Print the first 100 prime numbers
-let ln=100;
-while(ln<100){
-    if(ln>2){
-        
+function isPrime(n){
+    //since 0 and 1 is not prime return false.
+    if(n==1||n==0) return false;
+
+  //Run a loop from 2 to n-1
+  for(let i=2; i<=n/2; i++){
+      // if the number is divisible by i, then n is not a prime number.
+      if(n%i==0)return false;
+  }
+  //otherwise, n is prime number.
+  return true;
+}
+
+for(let i=1; i<=100; i++){
+    //check if current number is prime
+    if(isPrime(i)) {
+    //   console.log(i);
     }
 }
+
+
+// Coding challenge #19: Create a function that will return in an array the first "nPrimes" prime numbers greater than a particular number "startAt"
+
+function isPrime_charAt(count,start) {
+    let ar = [];
+    
+    let i = start;
+    
+    while(ar.length < count)
+    {
+        if (isPrime(i))
+        {
+            ar.push(i);
+        }
+        
+        i++;
+    }
+    
+    return ar;
+    
+}
+// console.log(isPrime_charAt(10,200));
+
+
+// Coding challenge #20: Rotate an array to the left 1 position
+
+let arr=[1,2,3];
+let temp=arr[0];
+for (let index = 1,i=0; index < arr.length; index++,i++) {
+    arr[i]=arr[index]; 
+     
+}
+ let last=arr.length
+// console.log(last);
+ arr[last-1]=temp;
+
+for (let index = 0; index < arr.length; index++) {
+//    console.log(arr[index]);
+    
+}
+
+// Coding challenge #21: Rotate an array to the right 1 position
+right_arr=[1,2,3];
+let last_pos = right_arr.pop();
+right_arr.unshift(last_pos);
+// console.log(right_arr);
+
+// Coding challenge #22: Reverse an array
+
+let rev_ar = [1, 2, 3];
+rev_ar2=new Array();
+for(i=rev_ar.length-1;i>=0;i--){
+    rev_ar2.push(rev_ar[i])
+}
+// console.log(rev_ar2);
+
+
+// Coding challenge #23: Reverse a string
+
+let s = "NutanBhoyar";
+let s2 = "";
+    
+    for(let i = s.length - 1; i >= 0; i--)
+    {
+        let char = s[i];
+        s2=s2+ char;
+    }
+    
+    // console.log(s2);
+
+// Coding challenge #24: Create a function that will merge two arrays and return the result as a new array
+
+let arra1=[1,2,5,6,7];
+let arr2=[8,1,3,0];
+let arr3=new Array();
+arr3=arr1.concat(arr2);
+// console.log(arr3);
+
+// Coding challenge #25: Create a function that will receive two arrays of numbers as arguments and return an array composed of all the numbers that are either in the first array or second array but not in both
+let arr_merge=[];
+for (let el of arra1) {
+   if (!arr2.includes(el)) {
+    arr_merge.push(el);
+   }
+}
+   for (let el of arr2) {
+    if (!arra1.includes(el)) {
+       arr_merge.push(el);
+    }
+    
+}
+// console.log(arr_merge);
+
+// Coding challenge #26: Create a function that will receive two arrays and will return an array with elements that are in the first array but not in the second
+
+var ar1 = [1, 2, 3, 10, 5, 3, 14];
+var ar2 = [-1, 4, 5, 6, 14];
+let arr_new=[];
+for (let el of ar1) {
+    if (!ar2.includes(el)) {
+        arr_new.push(el)
+    }
+}
+// console.log(arr_new);
+
+// Coding challenge #27: Create a function that will receive an array of numbers as argument and will return a new array with distinct elements
+
+
+let distinct_arr=[1, 2, 3, 6, -1, 2, 9, 7, 10, -1, 100];
+let new_distinct=[];
+let num=6;
+
+function isInArray(arr,num){
+    for (let index = 0; index < arr.length; index++) {
+        if(arr[index]===num){
+            return true;
+        }else{
+            return false;
+        }
+        
+    }
+
+}
+for (let index = 0; index < distinct_arr.length; index++) {
+    const element = distinct_arr[index];
+    if(!isInArray(new_distinct,element)){
+     new_distinct.push(element);
+    }
+}
+
+console.log(new_distinct);
+
+
+
